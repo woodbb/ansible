@@ -1,0 +1,9 @@
+---
+- name: Remove apache Playbook
+  hosts: labservers
+  become: yes
+  tasks:
+    - name: Remove the httpd package
+      yum:
+        name: httpd
+        state: absent

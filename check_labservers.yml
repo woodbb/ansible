@@ -1,0 +1,6 @@
+---
+- name: Check connectivity Playbook
+  hosts: labservers
+  tasks:
+    - name: Check connectivity
+      ping:
