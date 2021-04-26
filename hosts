@@ -1,6 +1,6 @@
 [labservers]
 ansiblelab1
 
-[labservers:vars]
-ansible_user = bwood
-ansible_ssh_private_key_file = /home/bwood/.ssh/id_rsa
+#[labservers:vars]
+#ansible_user = bwood
+#ansible_ssh_private_key_file = /home/bwood/.ssh/id_rsa
