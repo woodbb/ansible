@@ -7,3 +7,8 @@
       yum:
         name: httpd
         state: absent
+
+    - name: remove firewalld package
+      yum:
+        name: firewalld
+        state: absent
