@@ -1,0 +1,9 @@
+---
+- name: Smoketest Playbook
+  hosts: localhost
+  become: no
+  tasks:
+    - name: Ensure the web server is reachable
+      uri:
+        url: http://ansiblelab1
+        status_code: 200

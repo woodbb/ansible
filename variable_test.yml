@@ -1,0 +1,35 @@
+---
+- name: Lab 7 / Variable Test playbook
+  hosts: all
+  vars:
+    web_pkg: httpd
+    firewall_pkg: firewalld
+    web_service: httpd
+    firewall_service: firewalld
+    python_pkg: python-httplib2
+    rule: http
+  tasks:
+    - name: install the required packages
+      yum:
+        name:
+          - "{{ web_pkg }}"
+          - "{{ firewall_pkg }}"
+          - "{{ python_pkg }}"
+
+    - name: "start and enable the {{ firewall_service }} service"
+      service:
+        name: "{{ firewall_service }}"
+        enabled: true
+        state: started
+
+    - name: create web content to be served
+      copy:
+        content: "Example web content"
+        dest: /var/www/html/index.html
+
+    - name: "Open the port for {{ rule }}"
+      firewalld:
+        service: "{{ rule }}"
+        permanent: true
+        immediate: true
+        state: enabled

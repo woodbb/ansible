@@ -1,0 +1,7 @@
+---
+- name: this is a test
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - debug: 
+        msg: "{{ blah | upper }}" 
