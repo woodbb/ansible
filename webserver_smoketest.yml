@@ -1,7 +1,7 @@
 ---
 - name: Smoketest Playbook
   hosts: localhost
-  become: no
+  #become: no
   tasks:
     - name: Ensure the web server is reachable
       uri:
