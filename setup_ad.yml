@@ -1,0 +1,6 @@
+---
+- name: Lab9 Playbook
+  hosts: windows2012
+  gather_facts: false
+  roles:
+    - winad

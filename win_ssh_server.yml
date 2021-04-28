@@ -1,0 +1,7 @@
+---
+- name: Lab9 SSH Server Playbook
+  hosts: windows2012
+  vars_files:
+    - ./ssh_var.yml
+  roles:
+    - win_service_config
